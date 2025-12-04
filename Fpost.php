@@ -1,51 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Form Data (POST)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Form Input Data Mahasiswa - POST</h2>
-<form action="proses_post_sanitasi.php" method="POST">
-    NIM : <input type="text" name="nim"><br><br>
-    Nama : <input type="text" name="nama"><br><br>
-    Umur : <input type="number" name="umur"><br><br>
-    Tempat Lahir : <input type="text" name="tempat_lahir"><br><br>
-    Tanggal Lahir : <input type="date" name="tanggal_lahir"><br><br>
-    Alamat : <br>
-    <textarea name="alamat" rows="4" cols="30"></textarea><br><br>
-    
-    No. HP : <input type="text" name="no_hp"><br><br>
-    
-    Kota :
-    <select name="kota">
-        <option value="Semarang">Semarang</option>
-        <option value="Solo">Solo</option>
-        <option value="Salatiga">Salatiga</option>
-        <option value="Kudus">Kudus</option>
-        <option value="Pekalongan">Pekalongan</option>
-    </select><br><br>
+<div class="container">
+    <h2>Form Input Data</h2>
+    <form action="proses_post_sanitasi.php" method="POST">
+        
+        <div class="form-group">
+            <label>NIM</label>
+            <input type="text" name="nim" placeholder="Masukkan NIM...">
+        </div>
 
-    Jenis Kelamin :<br>
-    <input type="radio" name="jk" value="Laki-laki"> Laki-laki
-    <input type="radio" name="jk" value="Perempuan"> Perempuan
-    <br><br>
+        <div class="form-group">
+            <label>Nama</label>
+            <input type="text" name="nama" placeholder="Nama Lengkap...">
+        </div>
 
-    Status : <br>
-    <input type="radio" name="status" value="kawin"> Kawin
-    <input type="radio" name="status" value="belum kawin"> Belum Kawin
-    <br><br>
+        <div class="form-group">
+            <label>Umur</label>
+            <input type="number" name="umur">
+        </div>
 
-    Hobi : <br>
-    <input type="checkbox" name="hobi[]" value="Membaca"> Membaca <br> 
-    <input type="checkbox" name="hobi[]" value="Olahraga"> Olahraga <br> 
-    <input type="checkbox" name="hobi[]" value="Musik"> Musik <br> 
-    <input type="checkbox" name="hobi[]" value="Traveling"> Traveling <br> 
-    <br><br>
+        <div class="form-group">
+            <label>Tempat Lahir</label>
+            <input type="text" name="tempat_lahir">
+        </div>
 
-    Email : <input type="email" name="email"><br><br>
-    <input type="submit" value="Kirim">
-</form>
+        <div class="form-group">
+            <label>Tanggal Lahir</label>
+            <input type="date" name="tanggal_lahir">
+        </div>
+
+        <div class="form-group">
+            <label>Alamat</label>
+            <textarea name="alamat" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>No. HP</label>
+            <input type="text" name="no_hp">
+        </div>
+
+        <div class="form-group">
+            <label>Kota</label>
+            <select name="kota">
+                <option value="">-- Pilih Kota --</option>
+                <option value="Semarang">Semarang</option>
+                <option value="Solo">Solo</option>
+                <option value="Salatiga">Salatiga</option>
+                <option value="Kudus">Kudus</option>
+                <option value="Pekalongan">Pekalongan</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Jenis Kelamin</label>
+            <div class="radio-group">
+                <label><input type="radio" name="jk" value="Laki-laki"> Laki-laki</label>
+                <label><input type="radio" name="jk" value="Perempuan"> Perempuan</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Status</label>
+            <div class="radio-group">
+                <label><input type="radio" name="status" value="Kawin"> Kawin</label>
+                <label><input type="radio" name="status" value="Belum Kawin"> Belum Kawin</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Hobi</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="hobi[]" value="Membaca"> Membaca</label>
+                <label><input type="checkbox" name="hobi[]" value="Olahraga"> Olahraga</label>
+                <label><input type="checkbox" name="hobi[]" value="Musik"> Musik</label>
+                <label><input type="checkbox" name="hobi[]" value="Traveling"> Traveling</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email">
+        </div>
+
+        <input type="submit" value="Kirim Data">
+    </form>
+</div>
 
 </body>
 </html>
