@@ -1,3 +1,31 @@
+<?php
+
+function bersihkan($data) {
+    return htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
+}
+
+$nim           = bersihkan($_POST['nim'] ?? '-'); 
+$nama          = bersihkan($_POST['nama'] ?? '-');
+$umur          = bersihkan($_POST['umur'] ?? '-');
+$tempat_lahir  = bersihkan($_POST['tempat_lahir'] ?? '-');
+$tanggal_lahir = bersihkan($_POST['tanggal_lahir'] ?? '-');
+$no_hp         = bersihkan($_POST['no_hp'] ?? '-');
+$alamat        = bersihkan($_POST['alamat'] ?? '-');
+$email         = bersihkan($_POST['email'] ?? '-');
+$kota          = bersihkan($_POST['kota'] ?? '-');
+$jk            = bersihkan($_POST['jk'] ?? '-');
+$status        = bersihkan($_POST['status'] ?? '-');
+
+$hobi_output = "Tidak ada hobi"; 
+if (!empty($_POST['hobi'])) {
+    $hobi_list = [];
+    foreach ($_POST['hobi'] as $h) {
+        $hobi_list[] = bersihkan($h);
+    }
+    $hobi_output = implode(", ", $hobi_list);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
