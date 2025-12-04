@@ -107,3 +107,20 @@ input[type="submit"]:hover {
   font-weight: bold;
   color: #555;
 }
+
+.error-msg {
+  color: #d93025;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+input.invalid,
+textarea.invalid {
+  border-color: #d93025 !important;
+  background-color: #fff8f8;
+}
+
+input.valid {
+  border-color: #188038 !important;
+}
